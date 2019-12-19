@@ -31,15 +31,9 @@ def insertion():
     my_dict = {'op1': op1, 'op2': op2, 'op': op, 'result': result} #create dictionary
     new_collection.insert_one(my_dict) #insert in collection
 
-
-
     new_list = []
     for record in new_collection.find({}):
         new_list.append({"op": record['op'], 'first  operand': record['op1'], 'second operand': record['op2'], 'third operand': record['op'], 'Result': record['result']})
-
-
-
-
    #work for last operations collection
     operators_dict = {
      "op" :op, "values" : {'op1':op1, 'op2': op2, 'op': op, 'result': result}}

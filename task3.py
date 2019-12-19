@@ -8,7 +8,9 @@ def reverse(func):
         data = request.get_json()
         op = data['op']
         inverse = {"+": "-",
-                    "-": "+"}
+                    "-": "+",
+                   "*":"/",
+                   "/":"*"}
         data['op'] = inverse[op]
 
         result = func()
@@ -23,7 +25,10 @@ def calculator():
     op = data['op']
     ops = {
         "+": operator.add,
-        "-": operator.sub}
+        "-": operator.sub,
+        "*": operator.mul,
+        "/": operator.truediv
+        }
 
     op_func = ops[op]
 
